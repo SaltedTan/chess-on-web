@@ -14,7 +14,8 @@ class GameState {
     }
 }
 
-class Piece { 
+class Piece {
+    // Enum to represent the piece types in chess
     static types = Object.freeze({
         king: 0,
         queen: 1,
@@ -24,18 +25,30 @@ class Piece {
         pawn: 5
     });
 
+    /**
+     * Creates a Piece object with the specified colour and piece type.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {String} type - The type of the piece.
+     */
     constructor(isWhite, type) {
         if (typeof isWhite !== "boolean") throw "isWhite must be a boolean";
-        if (!isValidType(type)) throw "Invalid piece type";
+        if (!Piece.isValidType(type)) throw "Invalid piece type";
         this.isWhite = isWhite;
         this.type = type;
     }
 
     toString() {
-        return (this.isWhite ? "1" : "0") + types[this.type];
+        return (this.isWhite ? "1" : "0") + Piece.types[this.type];
     }
 
+    /**
+     * Validates the given type.
+     * 
+     * @param {String} type
+     * @returns {Boolean} True if the type exists, false otherwise.
+     */
     static isValidType(type) {
-        return type in types;
+        return type in Piece.types;
     }
 }
