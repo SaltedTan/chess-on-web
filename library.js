@@ -79,6 +79,19 @@ class Piece {
     }
 }
 
+class King extends Piece {
+    /**
+     * Creates a King object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "king");
+    }
+
+    // Note: Check if toString method is inherited
+}
+
 class Queen extends Piece {
     /**
      * Creates a Queen object with the specified colour.
