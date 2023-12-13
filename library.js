@@ -78,3 +78,14 @@ class Piece {
         return type in Piece.types;
     }
 }
+
+class Queen extends Piece {
+    /**
+     * Creates a Queen object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "queen");
+    }
+}
