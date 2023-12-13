@@ -2,12 +2,12 @@ const BOARD_SIZE = 8;
 
 class GameState {
     constructor() {
-        // board is an 8 * 8 array containing pieces
-        this.board = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE).fill(null));
+        // board consists of key-value pairs to store each piece
+        this.board = {};
         // isWhiteTurn keeps track of who should make the next move
         this.isWhiteTurn = true;
     }
-    
+
     /**
      * Adds pieces to the board as an initial setup for the game.
      */
