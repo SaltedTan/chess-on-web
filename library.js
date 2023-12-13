@@ -102,3 +102,47 @@ class Queen extends Piece {
         super(isWhite, "queen");
     }
 }
+
+class Rook extends Piece {
+    /**
+     * Creates a Rook object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "rook");
+    }
+}
+
+class Bishop extends Piece {
+    /**
+     * Creates a Bishop object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "bishop");
+    }
+}
+
+class Knight extends Piece {
+    /**
+     * Creates a Knight object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "knight");
+    }
+}
+
+class Pawn extends Piece {
+    /**
+     * Creates a Pawn object with the specified colour.
+     * 
+     * @param {Boolean} isWhite - The colour of the piece.
+     */
+    constructor(isWhite) {
+        super(isWhite, "pawn");
+    }
+}
