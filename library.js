@@ -1,7 +1,9 @@
+const BOARD_SIZE = 8;
+
 class GameState {
     constructor() {
         // board is an 8 * 8 array containing pieces
-        this.board = Array(8).fill(null).map(() => Array(8).fill(null));
+        this.board = Array(BOARD_SIZE).fill(null).map(() => Array(BOARD_SIZE).fill(null));
         // isWhiteTurn keeps track of who should make the next move
         this.isWhiteTurn = true;
     }
@@ -10,7 +12,31 @@ class GameState {
      * Adds pieces to the board as an initial setup for the game.
      */
     populateBoard() {
-        // TODO: Implement the logic to add chess pieces to the board
+        // Adds pawns for both sides
+        for (let i = 0; i < BOARD_SIZE; i++) {
+            this.board[1][i] = new Piece(false, "pawn");
+            this.board[6][i] = new Piece(true, "pawn");
+        }
+
+        // Adds remaining black pieces
+        this.board[0][0] = new Piece(false, "rook");
+        this.board[0][1] = new Piece(false, "knight");
+        this.board[0][2] = new Piece(false, "bishop");
+        this.board[0][3] = new Piece(false, "queen");
+        this.board[0][4] = new Piece(false, "king");
+        this.board[0][5] = new Piece(false, "bishop");
+        this.board[0][6] = new Piece(false, "knight");
+        this.board[0][7] = new Piece(false, "rook");
+
+        // Adds remaining white pieces
+        this.board[7][0] = new Piece(true, "rook");
+        this.board[7][1] = new Piece(true, "knight");
+        this.board[7][2] = new Piece(true, "bishop");
+        this.board[7][3] = new Piece(true, "queen");
+        this.board[7][4] = new Piece(true, "king");
+        this.board[7][5] = new Piece(true, "bishop");
+        this.board[7][6] = new Piece(true, "knight");
+        this.board[7][7] = new Piece(true, "rook");
     }
 }
 
