@@ -70,7 +70,10 @@ class Piece {
     }
 
     toString() {
-        return (this.isWhite ? "1" : "0") + Piece.types[this.type];
+        const colour = this.isWhite ? "White" : "Black";
+        const typeName = Object.keys(Piece.types).find(key => Piece.types[key] === this.type);
+        const locationString = `(${this.location[0]}, ${this.location[1]})`;
+        return `${colour} ${typeName} at ${locationString}`;
     }
 
     /**
