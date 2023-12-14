@@ -56,12 +56,17 @@ class Piece {
      * 
      * @param {Boolean} isWhite - The colour of the piece.
      * @param {String} type - The type of the piece.
+     * @param {Array<2>} location - The location of piece on the board.
      */
-    constructor(isWhite, type) {
+    constructor(isWhite, type, location) {
         if (typeof isWhite !== "boolean") throw "isWhite must be a boolean";
         if (!Piece.isValidType(type)) throw "Invalid piece type";
+        if (!Array.isArray(location)) throw "Location must be an array";
+        if (location.length !== 2) throw "Location has an invalid length";
+        if (typeof location[0] !== "number" || typeof location[1] !== "number") throw "The elements in location must be numbers";
         this.isWhite = isWhite;
         this.type = type;
+        this.location = location;
     }
 
     toString() {
