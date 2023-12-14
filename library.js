@@ -52,11 +52,11 @@ class Piece {
     });
 
     /**
-     * Creates a Piece object with the specified colour and piece type.
+     * Creates a Piece object with the specified colour, piece type, and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
-     * @param {String} type - The type of the piece.
-     * @param {Array<2>} location - The location of piece on the board.
+     * @param {boolean} isWhite - The colour of the piece, true if white, false if black.
+     * @param {string} type - The type of the piece (e.g., 'king', 'queen', 'rook', etc.).
+     * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, type, location) {
         if (typeof isWhite !== "boolean") throw "isWhite must be a boolean";
