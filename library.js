@@ -14,29 +14,29 @@ class GameState {
     populateBoard() {
         // Adds pawns for both sides
         for (let i = 0; i < BOARD_SIZE; i++) {
-            this.board[1][i] = new Piece(false, "pawn");
-            this.board[6][i] = new Piece(true, "pawn");
+            this.board[`p0${i}`] = new Pawn(false, [1, i]);
+            this.board[`p1${i}`] = new Pawn(true, [6, i]);
         }
 
         // Adds remaining black pieces
-        this.board[0][0] = new Piece(false, "rook");
-        this.board[0][1] = new Piece(false, "knight");
-        this.board[0][2] = new Piece(false, "bishop");
-        this.board[0][3] = new Piece(false, "queen");
-        this.board[0][4] = new Piece(false, "king");
-        this.board[0][5] = new Piece(false, "bishop");
-        this.board[0][6] = new Piece(false, "knight");
-        this.board[0][7] = new Piece(false, "rook");
+        this.board["r00"] = new Rook(false, [0, 0]);
+        this.board["k00"] = new Knight(false, [0, 1]);
+        this.board["b00"] = new Bishop(false, [0, 2]);
+        this.board["q0"] = new Queen(false, [0, 3]);
+        this.board["K0"] = new King(false, [0, 4]);
+        this.board["b01"] = new Bishop(false, [0, 5]);
+        this.board["k01"] = new Knight(false, [0, 6]);
+        this.board["r01"] = new Rook(false, [0, 7]);
 
         // Adds remaining white pieces
-        this.board[7][0] = new Piece(true, "rook");
-        this.board[7][1] = new Piece(true, "knight");
-        this.board[7][2] = new Piece(true, "bishop");
-        this.board[7][3] = new Piece(true, "queen");
-        this.board[7][4] = new Piece(true, "king");
-        this.board[7][5] = new Piece(true, "bishop");
-        this.board[7][6] = new Piece(true, "knight");
-        this.board[7][7] = new Piece(true, "rook");
+        this.board["r10"] = new Rook(false, [7, 0]);
+        this.board["k10"] = new Knight(false, [7, 1]);
+        this.board["b10"] = new Bishop(false, [7, 2]);
+        this.board["q1"] = new Queen(false, [7, 3]);
+        this.board["K1"] = new King(false, [7, 4]);
+        this.board["b11"] = new Bishop(false, [7, 5]);
+        this.board["k11"] = new Knight(false, [7, 6]);
+        this.board["r01"] = new Rook(false, [7, 7]);
     }
 }
 
@@ -61,9 +61,12 @@ class Piece {
     constructor(isWhite, type, location) {
         if (typeof isWhite !== "boolean") throw "isWhite must be a boolean";
         if (!Piece.isValidType(type)) throw "Invalid piece type";
+
         if (!Array.isArray(location)) throw "Location must be an array";
         if (location.length !== 2) throw "Location has an invalid length";
-        if (typeof location[0] !== "number" || typeof location[1] !== "number") throw "The elements in location must be numbers";
+        if (typeof location[0] !== "number" || typeof location[1] !== "number") 
+            throw "The elements in location must be numbers";
+        
         this.isWhite = isWhite;
         this.type = type;
         this.location = location;
