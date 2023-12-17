@@ -81,8 +81,8 @@ class Piece {
     /**
      * Validates the given type.
      * 
-     * @param {String} type
-     * @returns {Boolean} True if the type exists, false otherwise.
+     * @param {string} type
+     * @returns {boolean} True if the type exists, false otherwise.
      */
     static isValidType(type) {
         return type in Piece.types;
@@ -93,7 +93,7 @@ class King extends Piece {
     /**
      * Creates a King object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
@@ -107,7 +107,7 @@ class Queen extends Piece {
     /**
      * Creates a Queen object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
@@ -119,7 +119,7 @@ class Rook extends Piece {
     /**
      * Creates a Rook object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
@@ -131,7 +131,7 @@ class Bishop extends Piece {
     /**
      * Creates a Bishop object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
@@ -143,7 +143,7 @@ class Knight extends Piece {
     /**
      * Creates a Knight object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
@@ -155,7 +155,7 @@ class Pawn extends Piece {
     /**
      * Creates a Pawn object with the specified colour and location.
      * 
-     * @param {Boolean} isWhite - The colour of the piece.
+     * @param {boolean} isWhite - The colour of the piece.
      * @param {number[]} location - The location of the piece on the board, represented as an array with exactly two numbers [x, y].
      */
     constructor(isWhite, location) {
